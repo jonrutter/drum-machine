@@ -1,7 +1,7 @@
 import React, { useContext, useReducer } from 'react';
 import { reducer } from './reducer';
 
-const AppContext = React.createContext();
+const GlobalContext = React.createContext();
 
 const defaultState = {
   isOn: true,
@@ -10,7 +10,7 @@ const defaultState = {
   playing: '',
 };
 
-const AppProvider = ({ children }) => {
+const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, defaultState);
 
   const playSound = (description) => {
@@ -18,14 +18,14 @@ const AppProvider = ({ children }) => {
   };
 
   return (
-    <AppContext.Provider value={{ ...state, dispatch, playSound }}>
+    <GlobalContext.Provider value={{ ...state, dispatch, playSound }}>
       {children}
-    </AppContext.Provider>
+    </GlobalContext.Provider>
   );
 };
 
 export const useGlobalContext = () => {
-  return useContext(AppContext);
+  return useContext(GlobalContext);
 };
 
-export default AppProvider;
+export default GlobalProvider;
