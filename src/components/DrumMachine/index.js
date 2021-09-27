@@ -10,8 +10,8 @@ import DrumPad from '../DrumPad';
 // data
 import { bankHeater, bankPiano } from '../../data';
 
+// context
 import { useGlobalContext } from '../../context';
-import { logRoles } from '@testing-library/dom';
 
 const DrumMachine = () => {
   const { bank } = useGlobalContext();
@@ -19,11 +19,10 @@ const DrumMachine = () => {
     <div className={s.wrapper} id="drum-machine">
       <div className={s.content}>
         <header className={s.header}>
+          <h1 className={s.title}>Drum Machine</h1>
           <Display />
-          <Controls />
         </header>
         <div className={s.body}>
-          <h2>Buttons</h2>
           <ul className={s.padGrid}>
             {bank === 'heater'
               ? bankHeater.map((pad, index) => {
@@ -41,6 +40,9 @@ const DrumMachine = () => {
                   );
                 })}
           </ul>
+          <div className={s.controlsWrap}>
+            <Controls />
+          </div>
         </div>
       </div>
     </div>
