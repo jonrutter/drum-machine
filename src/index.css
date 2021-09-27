@@ -52,3 +52,21 @@ ol {
   position: absolute;
   width: 1px;
 }
+
+.app-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-content {
+  max-width: 600px;
+  margin: auto;
+}
+
+* {
+  margin-bottom: 0.5rem;
+}
