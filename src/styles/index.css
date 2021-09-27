@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'digital-7regular';
+  src: url('./fonts/digital-7-webfont.woff2') format('woff2'),
+    url('./fonts/digital-7-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   font-size: 16px;
   box-sizing: border-box;
@@ -21,9 +29,12 @@ body {
 }
 
 a {
-  color: inherit;
   background-color: transparent;
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 button {
@@ -51,4 +62,26 @@ ol {
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fcfcfc;
+  padding: 2.5rem 0;
+}
+
+.app-content {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.attribution {
+  text-align: center;
+  margin-top: 2rem;
 }

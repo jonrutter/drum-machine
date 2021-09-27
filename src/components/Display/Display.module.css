@@ -1,0 +1,40 @@
+.wrapper {
+  width: 100%;
+  background-color: #444;
+  color: #444;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.1),
+    inset 0px 4px 8px rgba(0, 0, 0, 0.08);
+  min-height: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  transition: all 0.2s;
+  font-family: 'digital-7regular';
+}
+
+.on {
+  background-color: #5398d3;
+  color: #222;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bank {
+  font-size: 2rem;
+  align-self: flex-start;
+}
+
+.playing {
+  font-size: 1.5rem;
+
+  align-self: flex-end;
+}
