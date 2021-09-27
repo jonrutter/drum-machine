@@ -8,15 +8,13 @@ import { useGlobalContext } from '../../context';
 const Display = () => {
   const { isOn, bank, playing } = useGlobalContext();
   return (
-    <div className={s.wrapper}>
-      <section className={s.content}>
-        <h2>Display</h2>
-        <p>{isOn ? 'Power is on' : 'Power is not on'}.</p>
-        <p>{isOn && `Bank: ${bank}.`}</p>
-        <p>
-          Currently playing: <span id="display">{isOn && playing}</span>
+    <div className={isOn ? `${s.wrapper} ${s.on}` : s.wrapper}>
+      <div className={s.content}>
+        <p className={s.bank}>{bank.toUpperCase()}</p>
+        <p id="display" className={s.playing}>
+          {playing}
         </p>
-      </section>
+      </div>
     </div>
   );
 };
