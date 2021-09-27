@@ -22,6 +22,7 @@ const DrumPad = ({ keyCode, keyName, description, url }) => {
     if (!isOn) return;
     if (audioRef.current !== null) {
       playSound(description);
+      audioRef.current.currentTime = 0;
       audioRef.current.play();
     }
   };
