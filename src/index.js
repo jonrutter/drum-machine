@@ -6,9 +6,13 @@ import App from './App';
 // fonts
 import '@fontsource/audiowide';
 
+import GlobalProvider from './context';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <GlobalProvider>
+      <App />
+    </GlobalProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
