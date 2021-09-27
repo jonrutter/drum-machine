@@ -1,0 +1,62 @@
+.wrapper {
+  border-radius: 0.25rem;
+  background-color: #8f8f8f;
+  color: #222;
+  padding: 1.5rem 2rem;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.05), 0px 4px 8px rgba(0, 0, 0, 0.08),
+    0px 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #222;
+  color: #fcfcfc;
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #444;
+}
+
+.title {
+  font-family: Audiowide;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.body {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.padGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 344px) {
+  .padGrid {
+    margin-bottom: 0;
+  }
+
+  .body {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .header {
+    flex-direction: row;
+  }
+}
