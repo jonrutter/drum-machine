@@ -4,6 +4,8 @@ import * as s from './Controls.module.css';
 
 import { useGlobalContext } from '../../context';
 
+import Switch from '../Switch';
+
 const Controls = () => {
   const { isOn, bank, dispatch } = useGlobalContext();
 
@@ -17,15 +19,11 @@ const Controls = () => {
 
   return (
     <div className={s.wrapper}>
-      <div className={s.content}>
-        <h2>Controls</h2>
-        <button className={s.powerButton} onClick={togglePower}>
-          Power Button
-        </button>
-        <br />
-        <button className={s.powerButton} onClick={toggleBank}>
-          Change Bank
-        </button>
+      <div className={s.row}>
+        <Switch label="Power" handler={togglePower} value={isOn} />
+      </div>
+      <div className={s.row}>
+        <Switch label="Bank" handler={toggleBank} value={bank === 'heater'} />
       </div>
     </div>
   );
